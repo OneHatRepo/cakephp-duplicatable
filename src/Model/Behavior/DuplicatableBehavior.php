@@ -53,7 +53,7 @@ class DuplicatableBehavior extends Behavior
     {
         return $this->_table->save(
             $this->duplicateEntity($id),
-            $this->getConfig('saveOptions') + ['associated' => $this->getConfig('contain'), 'duplicated' => true, 'originalId' => $id]
+            $this->getConfig('saveOptions') + ['associated' => $this->getConfig('contain'), 'duplicated' => true, 'originalId' => $id, 'duplicatedModel' => $this->_table->getAlias()]
         );
     }
 
